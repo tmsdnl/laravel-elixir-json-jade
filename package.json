@@ -1,0 +1,43 @@
+{
+  "name": "laravel-elixir-json-jade",
+  "version": "0.1.0",
+  "description": "Temporary Laravel Elixir Jade Extension With JSON Configuration",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "elixir",
+    "gulp",
+    "jade",
+    "json"
+  ],
+  "homepage": "https://github.com/tmsdnl/laravel-elixir-json-jade",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmsdnl/laravel-elixir-json-jade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tmsdnl/laravel-elixir-json-jade/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gulp-changed": "^1.2.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jade-inheritance": "git://github.com/juanfran/gulp-jade-inheritance.git",
+    "gulp-jade-php": "^1.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "underscore": "^1.7.0",
+    "gulp-data": "^1.2.1",
+    "lodash": "^4.6.1",
+    "path": "^0.12.7",
+    "fs": "^0.0.2"
+  },
+  "devDependencies": {
+    "gulp-jade-find-affected": "~0.2.2"
+  }
+}
