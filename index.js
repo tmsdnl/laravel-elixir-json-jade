@@ -71,19 +71,15 @@ elixir.extend('jade', function (options) {
 
     var getJsonData = function(file) {
         var fileData = path.parse(file.path);
-        var splitted = fileData.dir.split('/');
-        fileData.lang = splitted.pop();
+        var directory = fileData.dir.replace(process.cwd(), '').split('/');
 
-        if (fileData.lang.length !== 2) {
-            fileData.lang = splitted.pop();
-        }
+        fileData.lang = directory[5];
 
-        var pathGroupLang   = 'resources/assets/translates/blocks/' + fileData.lang + '/',
-            configJson      = JSON.parse(fs.readFileSync('resources/assets/translates/config.json')),
-            filesToConcat   = configJson['general'].concat(configJson[fileData.lang][fileData.name]);
+        var pathGroupLang   = 'resources/assets/translates/blocks/' + fileData.lang + '/';
+        var configJson      = JSON.parse(fs.readFileSync('resources/assets/translates/config.json'));
+        var filesToConcat   = configJson['general'].concat(configJson[fileData.lang][fileData.name]);
 
         var json = {};
-
         for(var i = 0; i < filesToConcat.length; i++) {
             json = lodash.assign(json, JSON.parse(fs.readFileSync(pathGroupLang + filesToConcat[i])));
         }
